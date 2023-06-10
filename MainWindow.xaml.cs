@@ -25,6 +25,8 @@ namespace clock
         List<string> hours = new List<string>();            // 小時清單
         List<string> minutes = new List<string>();          // 分鐘清單 
         DispatcherTimer timer = new DispatcherTimer();      // 宣告一個「時鐘」計時器      
+        string strSelectTime = "";   // 用來記錄鬧鐘設定時間
+        DispatcherTimer timerAlert = new DispatcherTimer(); // 宣告一個「鬧鐘」計時器
 
         public MainWindow()
         {
@@ -46,7 +48,11 @@ namespace clock
             timer.Interval = TimeSpan.FromSeconds(1);   // 這個計時器設定每一個刻度為1秒
             timer.Tick += new EventHandler(timer_tick); // 每一個時間刻度設定一個小程序timer_tick
             timer.Start(); // 啟動這個計時器
+                           // 設定「鬧鐘」計時器  
+         
         }
+
+
 
         // timer_tick事件：每一秒執行一次
         private void timer_tick(object sender, EventArgs e)
@@ -55,5 +61,24 @@ namespace clock
             txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");  // 顯示日期
             txtWeekDay.Text = DateTime.Now.ToString("dddd");     // 顯示星期幾
         }
+
+
+        private void btnSetAlert_Click(object sender, RoutedEventArgs e)
+        {
+            timerAlert.Start(); // 啟動鬧鐘計時器
+            btnSetAlert.IsEnabled = false;
+            btnCancelAlert.IsEnabled = true;
+            strSelectTime = cmbHour.SelectedItem + ":" + cmbMin.SelectedItem; // 擷取小時和分鐘的下拉選單文字，用來設定鬧鐘時間
+        }
+
+        private void btnCancelAlert_Click(object sender, RoutedEventArgs e)
+        {
+            meSound.LoadedBehavior = MediaState.Stop; // 關閉鬧鐘聲音
+            timerAlert.Stop(); // 停止鬧鐘計時器
+            btnSetAlert.IsEnabled = true;
+            btnCancelAlert.IsEnabled = false;
+        }
     }
-} 
+
+    }
+

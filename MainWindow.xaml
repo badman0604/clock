@@ -6,14 +6,15 @@
         xmlns:local="clr-namespace:clock"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FF22EDF4">
         <TextBox x:Name="txtTime" Height="140" Margin="60,19,0,0" TextWrapping="Wrap" Text="TextBox" Width="627" FontSize="72" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="87" Margin="26,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="437" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="60"/>
         <TextBox x:Name="txtWeekDay" HorizontalAlignment="Left" Height="87" Margin="479,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="295" FontSize="60" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btnSetAlert" Content="設定" HorizontalAlignment="Left" Height="30" Margin="150,282,0,0" VerticalAlignment="Top" Width="92" FontSize="16" RenderTransformOrigin="1.346,0.459"/>
-        <Button x:Name="btnCancelAlert" Content="取消" HorizontalAlignment="Left" Height="30" Margin="262,282,0,0" VerticalAlignment="Top" Width="80" FontSize="16"/>
-        <ComboBox x:Name="cmbHour" HorizontalAlignment="Left" Margin="359,288,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="-1.424,1.185"/>
-        <ComboBox x:Name="cmbMin" HorizontalAlignment="Left" Margin="430,288,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="-1.179,0.921"/>
+        <Button x:Name="btnSetAlert" Content="設定" HorizontalAlignment="Left" Height="30" Margin="45,278,0,0" VerticalAlignment="Top" Width="114" FontSize="16" RenderTransformOrigin="1.346,0.459"/>
+        <Button x:Name="btnCancelAlert" Content="取消" HorizontalAlignment="Left" Height="30" Margin="164,278,0,0" VerticalAlignment="Top" Width="119" FontSize="16"/>
+        <ComboBox x:Name="cmbHour" HorizontalAlignment="Left" Margin="300,282,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="-1.424,1.185"/>
+        <ComboBox x:Name="cmbMin" HorizontalAlignment="Left" Margin="371,282,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="-1.179,0.921"/>
+        <MediaElement x:Name="meSound" HorizontalAlignment="Left" Height="146" Margin="564,266,0,0" VerticalAlignment="Top" Width="162" Volume="1"/>
 
     </Grid>
 </Window>
